@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "958558977590",
+    "project_id": "book-app-1fa4c",
+    "storage_bucket": "book-app-1fa4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958558977590:android:9db24fbaa8be7015722297",
+        "android_client_info": {
+          "package_name": "com.judascrow.bookapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958558977590-tjh28tm73rbmbm0ucmu19rgsbnkbdoe7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMOqd3hH22W0FVbL6fBD-QSZfxDyI2kvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958558977590-tjh28tm73rbmbm0ucmu19rgsbnkbdoe7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
