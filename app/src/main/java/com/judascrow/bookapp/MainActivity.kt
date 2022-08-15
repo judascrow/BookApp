@@ -1,5 +1,6 @@
 package com.judascrow.bookapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.judascrow.bookapp.databinding.ActivityMainBinding
@@ -14,12 +15,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // handle click login
         binding.loginBtn.setOnClickListener {
-
+            startActivity(Intent(this,LoginActivity::class.java))
         }
 
+        // handle click skip to main screen
         binding.skipBtn.setOnClickListener {
+            startActivity(Intent(this,DashboardUserActivity::class.java))
 
         }
     }
 }
+
+
+
+
+

@@ -30,10 +30,10 @@
         android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/skipBtn"
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_button01"
         android:text="Login"
-        android:layout_above="@id/skipBtn"
         android:textColor="@color/white" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/shape_button02"
         android:text="Continue without login"
-        android:textColor="@color/purple_500" />
+        android:textColor="@color/blue_500" />
 
 
 
