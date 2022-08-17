@@ -7,14 +7,18 @@
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.186" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/shape_button01.xml" value="0.191" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/shape_button02.xml" value="0.2075" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/shape_button03.xml" value="0.168" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/shape_edittext01.xml" value="0.1295" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/shape_toolbar01.xml" value="0.1435" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/drawable/shape_toolbar02.xml" value="0.1435" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_category_add.xml" value="0.26875" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.27291666666666664" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_dashboard_user.xml" value="0.22982456140350876" />
-        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_pdf_add.xml" value="0.27291666666666664" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/row_category.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
