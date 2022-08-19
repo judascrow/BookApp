@@ -17,8 +17,11 @@
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_pdf_add.xml" value="0.27291666666666664" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_pdf_edit.xml" value="0.26875" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_pdf_list_admin.xml" value="0.25" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/row_category.xml" value="0.27291666666666664" />
+        <entry key="..\:/SEK/projects/BookApp/app/src/main/res/layout/row_pdf_admin.xml" value="0.26875" />
       </map>
     </option>
   </component>

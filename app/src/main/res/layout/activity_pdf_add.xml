@@ -72,18 +72,18 @@
         app:hintEnabled="false">
 
         <EditText
-            android:id="@+id/titleEt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_edittext01"
-            android:drawableStart="@drawable/ic_pdf_gray"
-            android:hint="Book Title"
-            android:drawablePadding="10dp"
-            android:inputType="textPersonName|textCapWords"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray01"
-            android:textSize="16sp"/>
+        android:id="@+id/titleEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_edittext01"
+        android:drawableStart="@drawable/ic_pdf_gray"
+        android:hint="Book Title"
+        android:drawablePadding="10dp"
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray01"
+        android:textSize="16sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
