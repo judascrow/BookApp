@@ -247,6 +247,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Read"
+            android:textSize="10sp"
             android:textColor="@color/white"
             android:drawableTop="@drawable/ic_book_white"
             android:layout_weight="1"
@@ -257,10 +258,22 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Download"
+            android:textSize="10sp"
             android:textColor="@color/white"
             android:drawableTop="@drawable/ic_download_white"
             android:layout_weight="1"
             android:background="@color/blue_500"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/favoriteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add To Favorite"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:background="@color/blue_500"
+            android:drawableTop="@drawable/ic_favorite_border_white"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
