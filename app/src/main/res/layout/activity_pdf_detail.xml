@@ -37,6 +37,7 @@
 
     <!--All content under scrollview-->
     <ScrollView
+        android:layout_above="@id/bookOptionsLl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
@@ -231,6 +232,37 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <!--Bottom buttons for book options-->
+    <LinearLayout
+        android:id="@+id/bookOptionsLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/design_default_color_background">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/readBookBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_book_white"
+            android:layout_weight="1"
+            android:background="@color/blue_500"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/downloadBookBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Download"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_download_white"
+            android:layout_weight="1"
+            android:background="@color/blue_500"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
 
