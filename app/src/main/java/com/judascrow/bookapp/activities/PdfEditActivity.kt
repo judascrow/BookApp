@@ -1,8 +1,7 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.app.AlertDialog
 import android.app.ProgressDialog
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log

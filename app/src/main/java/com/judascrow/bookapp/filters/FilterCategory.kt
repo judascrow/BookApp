@@ -1,6 +1,8 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.filters
 
 import android.widget.Filter
+import com.judascrow.bookapp.adapters.AdapterCategory
+import com.judascrow.bookapp.models.ModelCategory
 
 class FilterCategory: Filter {
 

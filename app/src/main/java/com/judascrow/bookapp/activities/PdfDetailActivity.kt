@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.Manifest
 import android.app.ProgressDialog
@@ -17,6 +17,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
+import com.judascrow.bookapp.Constants
+import com.judascrow.bookapp.MyApplication
+import com.judascrow.bookapp.R
 import com.judascrow.bookapp.databinding.ActivityPdfDetailBinding
 import java.io.FileOutputStream
 import java.lang.Exception
@@ -228,7 +231,13 @@ class PdfDetailActivity : AppCompatActivity() {
                     // load pdp category
                     MyApplication.loadCategory(categoryId, binding.categoryTv)
                     // load pdf thumbnail, pages count
-                    MyApplication.loadPdfFromUrlSinglePage("$bookUrl", "$bookTitle", binding.pdfView, binding.progressBar, binding.pagesTv)
+                    MyApplication.loadPdfFromUrlSinglePage(
+                        "$bookUrl",
+                        "$bookTitle",
+                        binding.pdfView,
+                        binding.progressBar,
+                        binding.pagesTv
+                    )
                     // load pdf size
                     MyApplication.loadPdfSize("$bookUrl", "$bookTitle", binding.sizeTv)
 
@@ -259,14 +268,16 @@ class PdfDetailActivity : AppCompatActivity() {
                         // available in favorite
                         Log.d(TAG, "onDataChange: Available in favorite")
                         // set drawable top icon
-                        binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_favorite_filled_white, 0,0)
+                        binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0,
+                            R.drawable.ic_favorite_filled_white, 0,0)
                         binding.favoriteBtn.text = "Remove Favorite"
                     }
                     else{
                         // not available in favorite
                         Log.d(TAG, "onDataChange: Not available in favorite")
                         // set drawable top icon
-                        binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0, R.drawable.ic_favorite_border_white, 0,0)
+                        binding.favoriteBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(0,
+                            R.drawable.ic_favorite_border_white, 0,0)
                         binding.favoriteBtn.text = "Add Favorite"
                     }
                 }

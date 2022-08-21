@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.judascrow.bookapp.filters.FilterPdfUser
+import com.judascrow.bookapp.MyApplication
+import com.judascrow.bookapp.activities.PdfDetailActivity
 import com.judascrow.bookapp.databinding.RowPdfUserBinding
+import com.judascrow.bookapp.models.ModelPdf
 
 class AdapterPdfUser : RecyclerView.Adapter<AdapterPdfUser.HolderPdfUser>, Filterable {
 

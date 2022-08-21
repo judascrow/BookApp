@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.adapters
 
 import android.app.AlertDialog
 import android.content.Context
@@ -9,7 +9,12 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.judascrow.bookapp.filters.FilterPdfAdmin
+import com.judascrow.bookapp.MyApplication
+import com.judascrow.bookapp.activities.PdfDetailActivity
+import com.judascrow.bookapp.activities.PdfEditActivity
 import com.judascrow.bookapp.databinding.RowPdfAdminBinding
+import com.judascrow.bookapp.models.ModelPdf
 
 class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Filterable {
 
@@ -59,10 +64,16 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
         // load category
         MyApplication.loadCategory(categoryId, holder.categoryTv)
 
-        MyApplication.loadPdfFromUrlSinglePage(pdfUrl, title, holder.pdfView, holder.progressBar, null)
+        MyApplication.loadPdfFromUrlSinglePage(
+            pdfUrl,
+            title,
+            holder.pdfView,
+            holder.progressBar,
+            null
+        )
 
         // load pdf size
-        MyApplication.loadPdfSize(pdfUrl,title, holder.sizeTv)
+        MyApplication.loadPdfSize(pdfUrl, title, holder.sizeTv)
 
         // handle click, show dialog with options 1) Edit Book, 5) Delete Book
         holder.moreBtn.setOnClickListener {
@@ -71,13 +82,13 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
 
         // handle item click, open PdfDetailActivity
         holder.itemView.setOnClickListener {
-            val intent = Intent(context,PdfDetailActivity::class.java)
+            val intent = Intent(context, PdfDetailActivity::class.java)
             intent.putExtra("bookId", pdfId)
             context.startActivity(intent)
         }
     }
 
-    private fun moreOptionsDialog(model: ModelPdf, holder: AdapterPdfAdmin.HolderPdfAdmin) {
+    private fun moreOptionsDialog(model: ModelPdf, holder: HolderPdfAdmin) {
         // get id,url,title of book
         val bookId = model.id
         val bookUrl = model.url

@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,10 +9,10 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.judascrow.bookapp.databinding.ActivityPdfAddBinding
+import com.judascrow.bookapp.adapters.AdapterPdfAdmin
 import com.judascrow.bookapp.databinding.ActivityPdfListAdminBinding
+import com.judascrow.bookapp.models.ModelPdf
 import java.lang.Exception
-import kotlin.math.log
 
 class PdfListAdminActivity : AppCompatActivity() {
 

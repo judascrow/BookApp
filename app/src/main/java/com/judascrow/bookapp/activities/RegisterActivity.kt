@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -9,8 +9,6 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.judascrow.bookapp.databinding.ActivityRegisterBinding
-import java.time.Instant
-import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
 

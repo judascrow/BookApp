@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.app.ProgressDialog
 import android.content.Intent

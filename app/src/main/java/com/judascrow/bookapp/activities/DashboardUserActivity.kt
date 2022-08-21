@@ -1,9 +1,10 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -13,7 +14,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.judascrow.bookapp.BooksUserFragment
 import com.judascrow.bookapp.databinding.ActivityDashboardUserBinding
+import com.judascrow.bookapp.models.ModelCategory
 
 class DashboardUserActivity : AppCompatActivity() {
 
@@ -40,6 +43,11 @@ class DashboardUserActivity : AppCompatActivity() {
             firebaseAuth.signOut()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+        }
+
+        // handle click, open profile
+        binding.profileBtn.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 
@@ -151,11 +159,19 @@ class DashboardUserActivity : AppCompatActivity() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser == null) {
             binding.subTitleTv.text = "Not Logged In"
+
+            // hide profile, logout
+            binding.profileBtn.visibility = View.GONE
+            binding.logoutBtn.visibility = View.GONE
         }
         else {
             val email = firebaseUser.email
             // set to textview of toolbar
             binding.subTitleTv.text = email
+
+            // show profile, logout
+            binding.profileBtn.visibility = View.VISIBLE
+            binding.logoutBtn.visibility = View.VISIBLE
         }
     }
 }

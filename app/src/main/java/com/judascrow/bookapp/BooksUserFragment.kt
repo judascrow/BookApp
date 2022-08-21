@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import com.google.firebase.database.*
+import com.judascrow.bookapp.adapters.AdapterPdfUser
 import com.judascrow.bookapp.databinding.FragmentBooksUserBinding
+import com.judascrow.bookapp.models.ModelPdf
 
 class BooksUserFragment : Fragment {
 

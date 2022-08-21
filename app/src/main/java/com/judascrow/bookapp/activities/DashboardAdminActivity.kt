@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.judascrow.bookapp.adapters.AdapterCategory
 import com.judascrow.bookapp.databinding.ActivityDashboardAdminBinding
+import com.judascrow.bookapp.models.ModelCategory
 import java.lang.Exception
 
 class DashboardAdminActivity : AppCompatActivity() {
@@ -65,12 +67,17 @@ class DashboardAdminActivity : AppCompatActivity() {
 
         // handle click, start add category page
         binding.addCategoryBtn.setOnClickListener {
-            startActivity(Intent(this,CategoryAddActivity::class.java))
+            startActivity(Intent(this, CategoryAddActivity::class.java))
         }
 
         // handle click, start add pdf page
         binding.addPdfFab.setOnClickListener {
-            startActivity(Intent(this,PdfAddActivity::class.java))
+            startActivity(Intent(this, PdfAddActivity::class.java))
+        }
+
+        // handle click, open profile
+        binding.profileBtn.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
     }

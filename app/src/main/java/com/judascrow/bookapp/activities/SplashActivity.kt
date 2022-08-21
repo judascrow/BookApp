@@ -1,4 +1,4 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.judascrow.bookapp.R
 
 class SplashActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class SplashActivity : AppCompatActivity() {
         // get current user, if logged in or not
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser == null) {
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         else {

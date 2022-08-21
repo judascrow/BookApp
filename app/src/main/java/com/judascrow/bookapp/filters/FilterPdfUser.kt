@@ -1,30 +1,30 @@
-package com.judascrow.bookapp
+package com.judascrow.bookapp.filters
 
-import android.util.Log
 import android.widget.Filter
+import com.judascrow.bookapp.adapters.AdapterPdfUser
+import com.judascrow.bookapp.models.ModelPdf
 
-class FilterPdfAdmin : Filter {
+class FilterPdfUser : Filter {
+
     var filterList: ArrayList<ModelPdf>
-    var adapterPdfAdmin: AdapterPdfAdmin
+    var adapterPdfUser: AdapterPdfUser
 
-    constructor(filterList: ArrayList<ModelPdf>, adapterPdfAdmin: AdapterPdfAdmin) {
+    constructor(filterList: ArrayList<ModelPdf>, adapterPdfUser: AdapterPdfUser) : super() {
         this.filterList = filterList
-        this.adapterPdfAdmin = adapterPdfAdmin
+        this.adapterPdfUser = adapterPdfUser
     }
 
     override fun performFiltering(constraint: CharSequence?): FilterResults {
         var constraint:CharSequence? = constraint // value to search
         val results = FilterResults()
 
-        Log.d("DEBUG", "performFiltering: $constraint")
-
         if (constraint != null && constraint.isNotEmpty()) {
 
-            constraint = constraint.toString().lowercase()
+            constraint = constraint.toString().uppercase()
             var filteredModels = ArrayList<ModelPdf>()
             for (i in filterList.indices) {
                 // validate if match
-                if (filterList[i].title.lowercase().contains(constraint)) {
+                if (filterList[i].title.uppercase().contains(constraint)) {
                     filteredModels.add(filterList[i])
                 }
             }
@@ -41,12 +41,21 @@ class FilterPdfAdmin : Filter {
     }
 
     override fun publishResults(constraint: CharSequence, results: FilterResults) {
-        // apply filter change
-        adapterPdfAdmin.pdfArrayList = results.values as ArrayList<ModelPdf>
+        adapterPdfUser.pdfArrayList = results.values as ArrayList<ModelPdf>
 
-        adapterPdfAdmin.notifyDataSetChanged()
+        adapterPdfUser.notifyDataSetChanged()
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
