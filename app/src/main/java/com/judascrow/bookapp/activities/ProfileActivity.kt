@@ -11,13 +11,18 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.judascrow.bookapp.MyApplication
 import com.judascrow.bookapp.R
+import com.judascrow.bookapp.adapters.AdapterPdfFavorite
 import com.judascrow.bookapp.databinding.ActivityProfileBinding
+import com.judascrow.bookapp.models.ModelPdf
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
 
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private lateinit var booksArrayList: ArrayList<ModelPdf>
+    private lateinit var adapterPdfFavorite: AdapterPdfFavorite
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +32,8 @@ class ProfileActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         loadUserinfo()
+
+        loadFavoriteBooks()
 
         // handle click, go back
         binding.backBtn.setOnClickListener {
@@ -72,6 +79,39 @@ class ProfileActivity : AppCompatActivity() {
 
                     }
 
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+    }
+
+
+    private fun loadFavoriteBooks(){
+        booksArrayList = ArrayList();
+
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        ref.child(firebaseAuth.uid!!).child("Favorites")
+            .addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    booksArrayList.clear()
+
+                    for (ds in snapshot.children) {
+                        val bookId = "${ds.child("bookId").value}"
+
+                        val modelPdf = ModelPdf()
+                        modelPdf.id = bookId
+
+                        booksArrayList.add(modelPdf)
+                    }
+
+                    binding.favoriteBookCountTv.text = "${booksArrayList.size}"
+
+                    adapterPdfFavorite = AdapterPdfFavorite(this@ProfileActivity, booksArrayList)
+
+                    binding.favoriteRv.adapter = adapterPdfFavorite
                 }
 
                 override fun onCancelled(error: DatabaseError) {
